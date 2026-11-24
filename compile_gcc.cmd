@@ -24,6 +24,7 @@ gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -
 gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_devices.obj src/utils/libfs/devices.c >> compile_gcc.log 2>&1
 gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_diskmap.obj src/utils/libfs/diskmap.c >> compile_gcc.log 2>&1
 gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_fssubs.obj src/utils/libfs/fssubs.c >> compile_gcc.log 2>&1
+gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_imgdev.obj src/utils/libfs/imgdev.c >> compile_gcc.log 2>&1
 gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_inode.obj src/utils/libfs/inode.c >> compile_gcc.log 2>&1
 gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_log_dump.obj src/utils/libfs/log_dump.c >> compile_gcc.log 2>&1
 gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -D_JFS_UTILITY -DINCL_NOPMAPI -DONE_FILESET_PER_AGGR -Isrc/include -Isrc/utils/libfs -Isrc/utils/libfs -Isrc/utils/chkdsk -c -o bin\obj\libfs_log_map.obj src/utils/libfs/log_map.c >> compile_gcc.log 2>&1
@@ -91,7 +92,7 @@ gcc -Zomf -O2 -w -std=gnu99 -include src/shim/jfs_compat.h -DM_I386 -D_JFS_OS2 -
 :library
 echo ==== library >> compile_gcc.log
 if exist bin\ujfs.lib del bin\ujfs.lib
-emxomfar rc bin\ujfs.lib bin\obj\libfs_bootsec.obj bin\obj\libfs_bufpool.obj bin\obj\libfs_cmputmsg.obj bin\obj\libfs_devices.obj bin\obj\libfs_diskmap.obj bin\obj\libfs_fssubs.obj bin\obj\libfs_inode.obj bin\obj\libfs_log_dump.obj bin\obj\libfs_log_map.obj bin\obj\libfs_log_read.obj bin\obj\libfs_log_work.obj bin\obj\libfs_logform.obj bin\obj\libfs_logredo.obj bin\obj\libfs_message.obj bin\obj\libfs_super.obj bin\obj\libfs_utilsubs.obj >> compile_gcc.log 2>&1
+emxomfar rc bin\ujfs.lib bin\obj\libfs_bootsec.obj bin\obj\libfs_bufpool.obj bin\obj\libfs_cmputmsg.obj bin\obj\libfs_devices.obj bin\obj\libfs_diskmap.obj bin\obj\libfs_fssubs.obj bin\obj\libfs_imgdev.obj bin\obj\libfs_inode.obj bin\obj\libfs_log_dump.obj bin\obj\libfs_log_map.obj bin\obj\libfs_log_read.obj bin\obj\libfs_log_work.obj bin\obj\libfs_logform.obj bin\obj\libfs_logredo.obj bin\obj\libfs_message.obj bin\obj\libfs_super.obj bin\obj\libfs_utilsubs.obj >> compile_gcc.log 2>&1
 echo ==== link >> compile_gcc.log
 echo -o bin\jfsformat.exe > bin\jfsformat.rsp
 echo bin\obj\format_initmap.obj >> bin\jfsformat.rsp

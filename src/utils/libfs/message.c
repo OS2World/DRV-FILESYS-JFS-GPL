@@ -75,7 +75,8 @@ char *message_user(unsigned mesg_no,
   int      i;
   unsigned data_len;
   unsigned rc;
-  char     data_buf[24];
+  static char data_buf[24];   /* static: the address is returned to the caller (it was an automatic array: undefined behaviour,
+                                   and GCC returns NULL for it) */
 
   DBG_TRACE(("enter:  message_user(%d)\n",mesg_no));
 

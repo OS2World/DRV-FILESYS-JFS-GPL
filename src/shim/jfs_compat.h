@@ -48,6 +48,8 @@
 /* IBM C intrinsic used by the debug break point macro brkpoint() */
 static inline void _interrupt(int n) { (void) n; __asm__ __volatile__("int $3"); }
 typedef unsigned long SpinLock_t;
+/* disk image files as volumes: DosOpen / DosDevIOCtl / DosQueryFSInfo are redirected to src/utils/libfs/imgdev.c */
+#include "imgdev.h"
 /* kernel types of the IBM header bsekee.h, only used in structures of the file system driver */
 typedef unsigned long MutexLock_t;
 typedef struct { unsigned long Addr; unsigned long Size; } KernPageList_t;
